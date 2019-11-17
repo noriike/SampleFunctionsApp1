@@ -25,6 +25,7 @@ namespace Company.Function
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
 
+            //morning⇒evening
             return name != null
                 ? (ActionResult)new OkObjectResult($"Hello, {name},good evening!")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
